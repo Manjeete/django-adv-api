@@ -1,10 +1,20 @@
-
 from django.contrib import admin
-from django.urls import path
-from test_app.views import Simple
+from django.urls import path,include
+from rest_framework.routers import DefaultRouter
+
+from django.conf import settings
+
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('simple/',Simple.as_view()),
-    path('simple/<int:id>/',Simple.as_view())
 ]
+
+
+if settings.DEBUG:
+    import debug_toolbar
+
+    urlpatterns = [
+        path('__debug__/',include(debug_toolbar.urls))
+    ] + urlpatterns

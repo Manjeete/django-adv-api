@@ -1,8 +1,6 @@
 from django.http import JsonResponse, response
-from .models import TestModel,ModelX
 from rest_framework.views import APIView
-from django.forms.models import model_to_dict
-from .serializers import SimpleSerializer
+from rest_framework import viewsets
 
 # Basic
 '''
@@ -82,6 +80,6 @@ class simple(APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return JsonResponse({"data":serializer.data})'''
-        
-                 
+
+               
 

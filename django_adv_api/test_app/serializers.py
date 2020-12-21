@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from .models import TestModel
 
 # Basic Serializers
 '''class SimpleObject():
@@ -30,4 +29,6 @@ def run_data():
 
     def update(self,instance,validated_data):
         TestModel.objects.filter(id=instance.id).update(**validated_data)
-        return TestModel.objects.get(id=instance.id)'''           
+        return TestModel.objects.get(id=instance.id)'''
+
+                  
