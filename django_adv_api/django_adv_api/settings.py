@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 
     'test_app',
     'user',
+    'gateway',
 ]
 
 AUTH_USER_MODEL =   "user.CustomUser"
